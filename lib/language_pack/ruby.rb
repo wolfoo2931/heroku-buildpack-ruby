@@ -565,6 +565,8 @@ https://devcenter.heroku.com/articles/sqlite3
 ERROR
           end
 
+          sleep 3
+
           error error_message
         end
       end
