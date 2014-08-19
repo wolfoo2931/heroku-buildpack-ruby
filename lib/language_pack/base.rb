@@ -28,7 +28,7 @@ class LanguagePack::Base
       @build_path    = build_path
       @stack         = ENV["STACK"]
       
-      puts "used stack #{ENV["STACK"]}"
+      puts "used stack '#{ENV["STACK"]}' of type #{ENV["STACK"].class}"
       
       
       @cache         = LanguagePack::Cache.new(cache_path) if cache_path
