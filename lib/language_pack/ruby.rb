@@ -7,6 +7,7 @@ require "language_pack/base"
 require "language_pack/ruby_version"
 require "language_pack/helpers/node_installer"
 require "language_pack/version"
+require "pp"
 
 # base Ruby Language Pack. This is for any base ruby app.
 class LanguagePack::Ruby < LanguagePack::Base
@@ -802,6 +803,10 @@ params = CGI.parse(uri.query || "")
         purge_bundler_cache
       end
 
+      puts "metadata start --------"
+      pp @metadata
+      puts "metadata end --------"
+      
       # fix for https://github.com/sparklemotion/nokogiri/issues/923
       if @metadata.exists?(buildpack_version_cache) && (bv = @metadata.read(buildpack_version_cache).sub('v', '').to_i) && bv != 0 && bv <= 76
         puts "Fixing nokogiri install. Clearing bundler cache."
