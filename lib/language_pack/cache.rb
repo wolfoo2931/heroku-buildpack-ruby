@@ -11,6 +11,10 @@ class LanguagePack::Cache
   # removes the the specified path from the cache
   # @param [String] relative path from the cache_base
   def clear(path)
+    
+    puts "--> path arg when calling Cache.clear: #{path} (#{path.class})"
+    
+    
     target = (@cache_base + path)
     target.exist? && target.rmtree
   end
