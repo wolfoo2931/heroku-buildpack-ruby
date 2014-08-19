@@ -804,6 +804,7 @@ params = CGI.parse(uri.query || "")
       end
 
       puts "metadata start --------"
+      puts @metadata.exists?(buildpack_version_cache)
       puts @metadata.read(buildpack_version_cache).sub('v', '').to_i
       puts "metadata end --------"
       
