@@ -804,7 +804,7 @@ params = CGI.parse(uri.query || "")
       end
 
       puts "metadata start --------"
-      pp @metadata
+      puts @metadata.read(buildpack_version_cache).sub('v', '').to_i
       puts "metadata end --------"
       
       # fix for https://github.com/sparklemotion/nokogiri/issues/923
